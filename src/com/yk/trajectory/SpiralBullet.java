@@ -40,7 +40,7 @@ public class SpiralBullet extends Thread {
 			CreateIcon.setCharacter(bbull, name);
 			bbull.setLocation(xjl.getX()+xjl.getWidth()/2 - bbull.getWidth() / 2,
 					xjl.getY()+xjl.getHeight()/2 - bbull.getHeight() / 2);
-			jp.add(bbull,i);
+			jp.add(bbull);
 			new BulletMove(bbull, Math.PI * (0.1*i)).start();
 		}
 		

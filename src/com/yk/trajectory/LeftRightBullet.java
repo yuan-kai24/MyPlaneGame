@@ -35,10 +35,10 @@ public class LeftRightBullet extends Thread {
 		/*--------------------------位置设置--------------------------------*/
 		bbulll.setLocation(xjl.getX() + 15, xjl.getY() + xjl.getHeight()
 				- bbulll.getHeight());
-		jp.add(bbulll,1);
+		jp.add(bbulll);
 		bbullr.setLocation(xjl.getX() + xjl.getWidth() - 45,
 				xjl.getY() + xjl.getHeight() - bbullr.getHeight());
-		jp.add(bbullr,1);
+		jp.add(bbullr);
 		/*-----------------------------------------------------------------*/
 		SwingUtilities.updateComponentTreeUI(jp);
 		this.start();

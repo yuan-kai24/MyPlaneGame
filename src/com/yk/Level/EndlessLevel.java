@@ -11,6 +11,7 @@ import com.yk.tool.StringOperation;
 import com.yk.trajectory.BulletAdd;
 import com.yk.trajectory.DiffusionBullet;
 import com.yk.trajectory.LevelBullet;
+import com.yk.trajectory.PlaneAdd;
 import com.yk.trajectory.ScatteringBullet;
 import com.yk.trajectory.SpiralBullet;
 import com.yk.user.User;
@@ -28,13 +29,15 @@ public class EndlessLevel extends Thread {
 	public EndlessLevel(LevelMap lm) {
 		this.lm = lm;
 		boosX = lm.getJp().getWidth() - 400;
+		hp="5";
+		ap="1";
 		setBoosInit();
 	}
 
 	public void init() {
 
 		// 添加用户(用戶初始化)
-		lm.getJp().add(User.setUser(lm, boos), 1);
+		lm.getJp().add(User.setUser(lm, boos));
 		lm.setDisplayJl();
 		PlayStop.setStop(lm);// 添加暂停按钮
 
@@ -184,17 +187,17 @@ public class EndlessLevel extends Thread {
 		}
 
 		return str;
-
 	}
 
 	public void run() {
 		while (StringOperation.strWho(User.hp, "0")) {
 			try {
 				if (User.isstop) {
+					new PlaneAdd(lm);
 					createBoos();
 					SwingUtilities.updateComponentTreeUI(lm.getJp());
 				}
-				Thread.sleep(1000);
+				Thread.sleep(5000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -203,7 +206,7 @@ public class EndlessLevel extends Thread {
 
 	public void setDis(XJLabel xjl) {
 		xjl.setVisible(true);
-		lm.getJp().add(xjl, 1);
+		lm.getJp().add(xjl);
 		xjl.startThread();
 		new BoosMove(xjl).start();
 	}

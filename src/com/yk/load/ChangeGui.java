@@ -9,7 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import com.yk.game.GameGui;
-import com.yk.map.EndlessMap;
 import com.yk.tool.CreateIcon;
 
 public class ChangeGui {
@@ -53,8 +52,8 @@ public class ChangeGui {
 			public void actionPerformed(ActionEvent arg0) {
 				jp.setVisible(false);
 				GameGui.getCon().remove(jp);
-				JPanel map = new EndlessMap().setInitMap();
-				GameGui.getJf().add(map);
+				EndlessGui.getJp().setVisible(true);
+				GameGui.getJf().add(EndlessGui.setEndless());
 			}
 		});
 		

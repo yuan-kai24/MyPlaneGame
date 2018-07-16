@@ -21,7 +21,7 @@ public class PlayStop {
 		des.setSize(90, 30);
 		des.setLocation(lm.getJp().getWidth() - des.getWidth() - 20, 20);
 
-		lm.getJp().add(des,1);
+		lm.getJp().add(des);
 
 		final JPanel jp = new JPanel();
 		jp.setLayout(null);
@@ -53,7 +53,7 @@ public class PlayStop {
 		jp.add(info);
 		jp.setVisible(false);
 
-		lm.getJp().add(jp,2);
+		lm.getJp().add(jp);
 
 		/*-------------------------事件区-------------------------------*/
 		des.addMouseListener(new MouseListener() {

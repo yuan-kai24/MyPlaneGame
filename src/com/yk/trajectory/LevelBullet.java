@@ -37,7 +37,7 @@ public class LevelBullet extends Thread {
 		CreateIcon.setCharacter(bbull, name);
 		bbull.setLocation(jl.getX() - bbull.getWidth() / 2 + jl.getWidth() / 2,
 				jl.getY() + bbull.getHeight());
-		jp.add(bbull,1);
+		jp.add(bbull);
 		SwingUtilities.updateComponentTreeUI(jp);
 		this.start();
 	}

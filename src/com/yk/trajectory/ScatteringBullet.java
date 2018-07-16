@@ -40,7 +40,7 @@ public class ScatteringBullet extends Thread {
 						xjl.getX() + xjl.getWidth() / 2 - bbull.getWidth() / 2,
 						xjl.getY() + xjl.getHeight() / 2 - bbull.getHeight()
 								/ 2);
-				jp.add(bbull, 1);
+				jp.add(bbull);
 				new BulletMove(bbull, Math.PI * (0.1 * j)).start();
 
 			}

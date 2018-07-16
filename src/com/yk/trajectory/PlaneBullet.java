@@ -35,7 +35,7 @@ public class PlaneBullet extends Thread {
 				new PlaneInfo(User.getPath()).getBullet());
 		jbull.setLocation(jl.getX() - jbull.getWidth() / 2 + jl.getWidth() / 2,
 				jl.getY() - jbull.getHeight());
-		jp.add(jbull,1);
+		jp.add(jbull);
 		SwingUtilities.updateComponentTreeUI(jp);
 		super.start();
 	}

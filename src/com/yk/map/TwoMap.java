@@ -24,11 +24,16 @@ public class TwoMap extends Thread implements LevelMap {
 	Thread level;
 	private UserInfo usi = new UserInfo();
 	private JLabel mybk = new JLabel();
+	private JPanel jpb = new JPanel();
 
 	public JPanel setInitMap() {
+		
+		jpb.setSize(GameGui.getCon().getWidth(), GameGui.getCon().getHeight());
+		jpb.setLayout(null);
+		
 		jp.setSize(GameGui.getCon().getWidth(), GameGui.getCon().getHeight());
 		jp.setLayout(null);
-		jp.setBackground(Color.black);
+		jp.setOpaque(false);
 
 		displayjf.setFont(new Font("微软雅黑", 0, 20));
 		displayjf.setSize(200, 25);
@@ -38,8 +43,9 @@ public class TwoMap extends Thread implements LevelMap {
 		jp.add(displayjf,0);
 		
 		jp.setVisible(true);
+		jpb.add(jp);
 		this.start();
-		return jp;
+		return jpb;
 	}
 
 
@@ -97,7 +103,7 @@ public class TwoMap extends Thread implements LevelMap {
 		jp.remove(ploat);
 		
 		CreateIcon.setFullScreen(mybk, jp, "03bk");
-		jp.add(mybk,-1);
+		jpb.add(mybk,-1);
 		/*--------------------begin------------------------*/
 		level = new TwoLevel(this);
 		((TwoLevel) level).init();
@@ -169,9 +175,9 @@ public class TwoMap extends Thread implements LevelMap {
 				uset.setStorage();
 			}
 			
-			jp.setVisible(false);
-			jp.removeAll();
-			GameGui.getCon().remove(jp);
+			jpb.setVisible(false);
+			jpb.removeAll();
+			GameGui.getCon().remove(jpb);
 			GameGui.getJf().add(LevelChange.getJp());
 			LevelChange.getJp().setVisible(true);
 			SwingUtilities.updateComponentTreeUI(GameGui.getJf());

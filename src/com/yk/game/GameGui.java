@@ -30,7 +30,7 @@ public class GameGui {
 		SwingUtilities.updateComponentTreeUI(jf);
 		
 		jf.setVisible(true);
-		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 		
 		

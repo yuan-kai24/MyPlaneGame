@@ -42,8 +42,8 @@ public class PlaneTwoBullet {
 		jbullt.setLocation(jl.getX() - jbullo.getWidth() / 2 + jl.getWidth() / 2 + jbullo.getWidth()+5,
 				jl.getY() - jbullo.getHeight() / 2);
 
-		jp.add(jbullo,1);
-		jp.add(jbullt,1);  
+		jp.add(jbullo);
+		jp.add(jbullt);  
 		new BulletFly(jbullo).start();
 		new BulletFly(jbullt).start();
 		SwingUtilities.updateComponentTreeUI(jp);
